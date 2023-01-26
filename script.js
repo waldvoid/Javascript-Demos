@@ -1,46 +1,51 @@
-// setTimeout ile zamanlama
-let timeoutCounter = 0;
-setTimeout(function(){
-    console.log("Bu 5 saniye sonra basılacak");
-    timeoutCounter++;
-}, 5000);
+// tenrary operator
+let time = 11;
+(time >= 6) ? console.log("I'm Hungry") : console.log("I'm full");
 
-    // başka türlü zamanlama
-// clearla durdurabilirsin ikisini zamanlayıcıyı da
-function send (message) {
-    console.log("Bu " + message + " saniye sonra basılacak");
-    timeoutCounter++;
-    if(timeoutCounter > 0) {
-        clearTimeout(sendMessage);
+let color = "blue";
+let isBlue = (color === "blue");
+console.log(isBlue);
+
+// Switch condition but its slower than if
+let condition = 15;
+switch (true) {
+    case (condition < 10):
+        console.log("The price below 10");
+        break;
+    case (condition >= 10):
+        console.log("The price above or equal 10");
+        break;
+    default:
+        console.log("I don't know what that is");
+}
+
+let cityTo = "Paris";
+switch (cityTo) {
+    case "Berlin":
+        console.log("The price is $100");
+        break;
+    case "Paris":
+        console.log("The price is $120");
+        break;
+    case "London":
+        console.log("The price is $150");
+        break;
+    default:
+        console.log("The price is $90");
+        break;
+}
+
+languageInfo("Javascript");
+function languageInfo(language){
+    switch (language) {
+        case "Javascript":
+            console.log("Begins on December 4, 1995");
+            break;
+        case "Java":
+            console.log("Begins on May 23, 1995");
+            break;
+        case "PHP":
+            console.log("Begins on June 8, 1995");
+            break;
     }
 }
-let sendMessage = setTimeout(send, 10000, "10");
-// setTimeout'u sıfıra ayarlayıp ikinci sırada olarak bastırma
-let anotherMessage = setTimeout(send, 0, "sıfır");
-console.log("hızlıca bu yazıyı bas");
-
-// setInterval ile belirli aralıklarla tekrarlı iş
-// Bir kere kurdun mu aynı değer tekrarlanıyor değiştiremezsin
-let counter = 0;
-function alarm(hour) {
-    console.log("Uyan artık saat " + hour + " oldu!");
-    counter++;
-    if (counter > 6) {
-        clearInterval(intervalID);
-    };
-}
-let time = new Date();
-const intervalID = setInterval(alarm, 3000, time.getHours());
-
-// arrow function setTimeout
-for (let number = 5; number < 9; number++) {
-    setTimeout(() => console.log(number), 1);
-}
-
-// interval kurup timeout ile sonlandıralım
-function showName(name) {
-    return(`Hello, student ` + name + '!');
-}
-
-const studentGreeting = setInterval(showName, 1000, "Alex");
-setTimeout(() => clearInterval(studentGreeting), 7000);
