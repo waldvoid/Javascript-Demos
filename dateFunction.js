@@ -22,3 +22,9 @@ console.log(myDate.toJSON());
 // parse from JSON data into Date object and transform to string
 let convertJSONdate = new Date(myDate.toJSON());
 console.log(convertJSONdate.toDateString());
+
+// finding difference between two dates
+let birthday = new Date("2000-03-24")
+let firstDayInSchool = new Date("2008-09-01")
+
+console.log((birthday.getTime() - firstDayInSchool.getTime()) / (1000 *60 *60) );
