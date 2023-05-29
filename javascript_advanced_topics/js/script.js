@@ -6,3 +6,5 @@ import "./nullishCoalescing.js";
 import "./hof.js";
 import "./closures.js";
 import "./arrayAdvanced.js";
+import "./domDetail.js";
+import "./domDetail2.js";
